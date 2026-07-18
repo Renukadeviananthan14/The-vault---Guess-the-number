@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, jsonify, session
 app = Flask(__name__)
 app.secret_key = "vault-cracker-secret-key-change-me"
 
-MAX_ATTEMPTS = 5
+MAX_ATTEMPTS = 10
 
 
 def new_game():
