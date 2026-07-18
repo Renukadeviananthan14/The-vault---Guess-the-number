@@ -98,4 +98,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Author
 
-Built by Renu — backend game logic developed independently, frontend design and Flask integration built with Claude.
+Built by Renuka devi Ananthan — backend game logic developed independently, frontend design and Flask integration built with Claude.
