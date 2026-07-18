@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Vault &mdash; Crack the Combination</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<main class="stage">
+
+  <header class="masthead">
+    <p class="eyebrow">Case File No. 100&ndash;01</p>
+    <h1>THE VAULT</h1>
+    <p class="sub">Somewhere between <span>1</span> and <span>100</span> sits the combination. You have <span id="max-attempts-label">{{ max_attempts }}</span> turns of the dial before the vault re-locks for good.</p>
+  </header>
+
+  <section class="vault-room">
+
+    <div class="dial-column">
+      <div class="dial-wrap">
+        <svg class="dial" viewBox="0 0 320 320" role="img" aria-label="Combination dial">
+          <circle class="dial-outer" cx="160" cy="160" r="150"></circle>
+          <circle class="dial-face" cx="160" cy="160" r="128"></circle>
+          <g class="dial-ticks" id="dial-ticks"></g>
+          <line id="needle" class="needle" x1="160" y1="160" x2="160" y2="48"></line>
+          <circle class="hub" cx="160" cy="160" r="14"></circle>
+          <text id="dial-readout" class="dial-readout" x="160" y="216" text-anchor="middle">--</text>
+        </svg>
+        <p class="dial-caption" id="dial-caption">Awaiting first turn</p>
+      </div>
+
+      <div class="tumblers" id="tumblers" aria-label="Attempts remaining"></div>
+    </div>
+
+    <div class="console">
+
+      <form id="guess-form" class="guess-form" autocomplete="off">
+        <label for="guess-input">Set the dial</label>
+        <div class="input-row">
+          <input type="number" id="guess-input" name="guess" min="1" max="100" placeholder="1&ndash;100" required>
+          <button type="submit" id="turn-btn">Turn Dial</button>
+        </div>
+      </form>
+
+      <p class="feedback" id="feedback">The lock is cold. Enter a number to begin cracking the vault.</p>
+
+      <div class="log">
+        <div class="log-head">
+          <span>Turn</span><span>Number</span><span>Reading</span>
+        </div>
+        <ul id="log-list"></ul>
+      </div>
+
+      <button id="reset-btn" class="reset-btn hidden">Start New Heist</button>
+
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p>Every wrong turn narrows the field. Five turns, one door.</p>
+    <p>Developed By Renuka devi Ananthan</p>
+  </footer>
+
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
