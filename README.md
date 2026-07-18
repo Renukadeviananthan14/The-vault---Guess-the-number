@@ -72,6 +72,26 @@ The core guessing logic lives in `app.py`:
 - Tracks attempts used and enforces the 5-turn limit
 - Ends the game on a correct guess or when attempts run out
 
+## Simple Logic
+
+import random
+print ("Welcome to guess the number game")
+print ("Enter the number between 1 to 100")
+secret_key = random.randint(1,100)
+
+for i in range (1,6):
+    user_input = int(input("Enter the number"))
+    if user_input < 1 or user_input > 100:
+        print ("Oops! Invalid Number. Enter the number between 1 to 100")
+    elif user_input == secret_key:
+        print("Your guessed number is correct")
+    elif user_input > secret_key:
+        print ("Your number is greater than secret key")
+    else:
+        print("Your number is lesser than secret key")
+else:
+    print("Your trails are over. Try again")
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
