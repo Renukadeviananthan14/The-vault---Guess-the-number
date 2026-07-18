@@ -73,7 +73,7 @@ The core guessing logic lives in `app.py`:
 - Ends the game on a correct guess or when attempts run out
 
 ## Simple Logic
-
+```bash
 import random
 print ("Welcome to guess the number game")
 print ("Enter the number between 1 to 100")
@@ -91,7 +91,7 @@ for i in range (1,6):
         print("Your number is lesser than secret key")
 else:
     print("Your trails are over. Try again")
-
+```
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
